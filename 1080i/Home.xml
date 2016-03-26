@@ -589,20 +589,20 @@
       </control>
     </control>
     <control type="group" id="700" description="Shelf items">
-      <include condition="!Skin.HasSetting(MoviesShelf_Image)">Movies_RA</include>
-      <include condition="!Skin.HasSetting(TVShelf_Image)">TV_RA</include>
-      <include condition="!Skin.HasSetting(MusicShelf_Image)">Music_RA</include>
-      <include condition="Skin.HasSetting(PicturesShelf_Custom)">Pictures_Shortcuts</include>
-      <include condition="Skin.HasSetting(AddonsShelf_Custom)">Addons_Shortcuts</include>
+      <include condition="!Skin.HasSetting(MoviesShelf_Image) + !Player.HasMedia">Movies_RA</include>
+      <include condition="!Skin.HasSetting(TVShelf_Image) + !Player.HasMedia">TV_RA</include>
+      <include condition="!Skin.HasSetting(MusicShelf_Image) + !Player.HasMedia">Music_RA</include>
+      <include condition="Skin.HasSetting(PicturesShelf_Custom) + !Player.HasMedia">Pictures_Shortcuts</include>
+      <include condition="Skin.HasSetting(AddonsShelf_Custom) + !Player.HasMedia">Addons_Shortcuts</include>
       <control type="group" description="Playing">
-        <visible>ControlGroup(9000).HasFocus(306) + Player.HasMedia</visible>
+        <visible>Player.HasMedia</visible>
         <posy>57</posy>
         <animation effect="fade" start="100" end="0" time="100">Hidden</animation>
         <animation effect="fade" start="0" end="100" delay="300" time="300">VisibleChange</animation>
         <include>PlayingInfo</include>
       </control>
       <control type="image" description="Custom Image">
-        <visible>[ControlGroup(9000).HasFocus(301) + Skin.HasSetting(MoviesShelf_Image)] | [ControlGroup(9000).HasFocus(302) + Skin.HasSetting(TVShelf_Image)] | [ControlGroup(9000).HasFocus(303) + Skin.HasSetting(MusicShelf_Image)] | [ControlGroup(9000).HasFocus(304) + Skin.HasSetting(PicturesShelf_Image)] | [ControlGroup(9000).HasFocus(305) + Skin.HasSetting(AddonsShelf_Image)] | [ControlGroup(9000).HasFocus(306) + Skin.HasSetting(XBMCShelf_Image) + !Player.HasMedia]</visible>
+        <visible>[[ControlGroup(9000).HasFocus(301) + Skin.HasSetting(MoviesShelf_Image)] | [ControlGroup(9000).HasFocus(302) + Skin.HasSetting(TVShelf_Image)] | [ControlGroup(9000).HasFocus(303) + Skin.HasSetting(MusicShelf_Image)] | [ControlGroup(9000).HasFocus(304) + Skin.HasSetting(PicturesShelf_Image)] | [ControlGroup(9000).HasFocus(305) + Skin.HasSetting(AddonsShelf_Image)] | [ControlGroup(9000).HasFocus(306) + Skin.HasSetting(XBMCShelf_Image)]] + !Player.HasMedia</visible>
         <include>ListVisibleFade</include>
         <posx>68</posx>
         <posy>111</posy>
@@ -613,7 +613,7 @@
         <texture>$VAR[ShelfIcon]</texture>
       </control>
       <control type="image" description="Logo">
-        <visible>[ControlGroup(9000).HasFocus(301) + !Skin.HasSetting(MoviesShelf_Image) + !Control.IsVisible(311)] | [ControlGroup(9000).HasFocus(302) + !Skin.HasSetting(TVShelf_Image) + !Control.IsVisible(312)] | [ControlGroup(9000).HasFocus(303) + !Skin.HasSetting(MusicShelf_Image) + !Control.IsVisible(313)] | [ControlGroup(9000).HasFocus(304) + !Skin.HasSetting(PicturesShelf_Image) + !Control.IsVisible(314)] | [ControlGroup(9000).HasFocus(305) + !Skin.HasSetting(AddonsShelf_Image) + !Control.IsVisible(315)] | [ControlGroup(9000).HasFocus(306) + !Skin.HasSetting(XBMCShelf_Image) + !Player.HasMedia]</visible>
+        <visible>[[ControlGroup(9000).HasFocus(301) + !Skin.HasSetting(MoviesShelf_Image) + !Control.IsVisible(311)] | [ControlGroup(9000).HasFocus(302) + !Skin.HasSetting(TVShelf_Image) + !Control.IsVisible(312)] | [ControlGroup(9000).HasFocus(303) + !Skin.HasSetting(MusicShelf_Image) + !Control.IsVisible(313)] | [ControlGroup(9000).HasFocus(304) + !Skin.HasSetting(PicturesShelf_Image) + !Control.IsVisible(314)] | [ControlGroup(9000).HasFocus(305) + !Skin.HasSetting(AddonsShelf_Image) + !Control.IsVisible(315)] | [ControlGroup(9000).HasFocus(306) + !Skin.HasSetting(XBMCShelf_Image)]] + !Player.HasMedia</visible>
         <include>ListVisibleFade</include>
         <centerleft>960</centerleft>
         <top>57</top>

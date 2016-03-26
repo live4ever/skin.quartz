@@ -10,8 +10,8 @@
   </include>
   <include name="PlayingInfo">
     <control type="label" description="Playing label">
-      <posx>94</posx>
-      <posy>-15</posy>
+      <posx>395</posx>
+      <posy>40</posy>
       <height>45</height>
       <width>750</width>
       <label>$LOCALIZE[31023]:</label>
@@ -22,19 +22,19 @@
       <shadowcolor>33FF000000</shadowcolor>
     </control>
     <control type="label" description="Title label">
-      <posx>495</posx>
-      <posy>192</posy>
+      <posx>395</posx>
+      <posy>120</posy>
       <height>45</height>
       <width>750</width>
       <label>$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title]</label>
       <align>left</align>
       <aligny>center</aligny>
       <font>size24</font>
-      <textcolor>White2</textcolor>
+      <textcolor>HL</textcolor>
       <shadowcolor>ShadowDark</shadowcolor>
     </control>
     <control type="label" description="Artist label">
-      <posx>495</posx>
+      <posx>395</posx>
       <posy>243</posy>
       <height>45</height>
       <width>750</width>
@@ -46,29 +46,41 @@
       <shadowcolor>ShadowDark</shadowcolor>
     </control>
     <control type="label" description="Album Label">
-      <posx>495</posx>
+      <posx>395</posx>
       <posy>279</posy>
       <height>45</height>
       <width>750</width>
       <label>$INFO[MusicPlayer.Album]$INFO[VideoPlayer.Album]$INFO[VideoPlayer.Season,$LOCALIZE[20373] , - ]$INFO[VideoPlayer.episode,$LOCALIZE[20359] ]</label>
       <align>left</align>
       <aligny>center</aligny>
-      <font>size18</font>
+      <font>size24</font>
       <textcolor>White</textcolor>
       <shadowcolor>ShadowDark</shadowcolor>
     </control>
     <control type="label" description="Time Label">
-      <posx>495</posx>
-      <posy>315</posy>
+      <posx>395</posx>
+      <posy>180</posy>
       <height>45</height>
       <width>488</width>
       <label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
       <align>left</align>
       <aligny>center</aligny>
-      <font>size17</font>
-      <textcolor>White</textcolor>
+      <font>size24</font>
+      <textcolor>White2</textcolor>
       <shadowcolor>ShadowDark</shadowcolor>
     </control>
+      <control type="button" description="Fullscreen btn">
+          <posx>395</posx>
+          <posy>240</posy>
+          <height>45</height>
+          <width>488</width>
+          <label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+          <align>left</align>
+          <aligny>center</aligny>
+          <font>size24</font>
+          <textcolor>White2</textcolor>
+          <shadowcolor>ShadowDark</shadowcolor>
+      </control>
     <control type="image" description="Cover">
       <visible>!Videoplayer.content(Movies)</visible>
       <posx>94</posx>
@@ -76,15 +88,19 @@
       <width>303</width>
       <height>303</height>
       <texture>$INFO[MusicPlayer.Cover]$INFO[VideoPlayer.Cover]</texture>
+      <bordertexture border="12">img/ThumbBorder.png</bordertexture>
+        <bordersize>9</bordersize>
       <aspectratio>scale</aspectratio>
     </control>
     <control type="image" description="Cover">
       <visible>VideoPlayer.content(Movies)</visible>
-      <posx>94</posx>
-      <posy>54</posy>
-      <width>303</width>
-      <height>303</height>
+      <posx>41</posx>
+      <posy>45</posy>
+      <width>315</width>
+      <height>321</height>
       <texture>$INFO[VideoPlayer.Cover]</texture>
+      <bordertexture border="12">img/ThumbBorder.png</bordertexture>
+        <bordersize>9</bordersize>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
